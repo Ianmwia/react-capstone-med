@@ -78,6 +78,51 @@ const authSlice = createSlice({
             state.user = null
             state.status = 'loggedOut'
         }
+    }, 
+    extraReducers: (builder) => {
+        builder
+        .addCase(signupUser.pending, (state)=>{
+            state.loading = true
+            state.error = null
+        })
+        .addCase(signupUser.fulfilled, (state,)=>{
+            state.loading = false
+            state.error = null
+            state.status = 'loggedIn'
+        })
+        .addCase(signupUser.rejected, (state)=>{
+            state.loading = false
+            state.error = null
+            state.status = 'loggedOut'
+        })
+        .addCase(login.pending, (state)=>{
+            state.loading = true
+            state.error = null
+        })
+        .addCase(login.fulfilled, (state,)=>{
+            state.loading = false
+            state.error = null
+            state.status = 'loggedIn'
+        })
+        .addCase(login.rejected, (state)=>{
+            state.loading = false
+            state.error = null
+            state.status = 'loggedOut'
+        })
+        .addCase(logout.pending, (state)=>{
+            state.loading = true
+            state.error = null
+        })
+        .addCase(logout.fulfilled, (state,)=>{
+            state.loading = false
+            state.error = null
+            state.status = 'loggedOut'
+        })
+        .addCase(logout.rejected, (state, action)=>{
+            state.loading = false
+            state.error = action.payload
+            state.status = 'loggedIn'
+        })
     }
 })
 
