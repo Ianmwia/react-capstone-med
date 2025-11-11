@@ -18,21 +18,23 @@ export default function SignupForm(){
     useEffect(()=>{
         if(user && status){
             if(status === 'loggedIn'){
-                navigate('/dashboard')
+                navigate('/')
             }
         }
     },[user, status, navigate])
 
     return(
-        <div className='outline rounded'>
-        <div>
-            <h2>Sign Up</h2>
+        <>
+        <div className='flex items-center justify-center min-h-screen bg-gray-300'>
+            <div className='bg-white p-7 rounded-xl w-96 flex flex-col'>
+                <h2 className='text-[20px] font-semibold text-center mb-4'>Sign Up</h2>
+                <form onSubmit={handleSignup} className='flex flex-col flex-1 gap-4'>
+                    <input className='outline p-2 rounded' type="email" placeholder='email' value={email} autoComplete='email' onChange={(e)=> setEmail(e.target.value)}/>
+                    <input className='outline p-2 rounded' type='password' placeholder='password' value={password} autoComplete='current-password' onChange={(e)=> setPassword(e.target.value)}/>
+                    <button type='submit' className='bg-green-400 text-white p-2 rounded-lg cursor-pointer'>Sign Up</button>
+                </form>
+            </div>
         </div>
-        <form onSubmit={handleSignup} className=''>
-            <input type="email" placeholder='email' value={email} autoComplete='email' onChange={(e)=> setEmail(e.target.value)}/>
-            <input type='password' placeholder='password' value={password} autoComplete='current-password' onChange={(e)=> setPassword(e.target.value)}/>
-            <button type='submit' >Sign Up</button>
-        </form>
-        </div>
+        </>
     )
 }
