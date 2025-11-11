@@ -16,7 +16,7 @@ export default function LoginForm(){
     }
     //switch from visitor to dashboard
     useEffect(()=>{
-        if(user && status){
+        if(status){
             if(status === 'loggedIn'){
                 navigate('/dashboard')
             }else if(status === 'loggedOut'){

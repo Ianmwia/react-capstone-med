@@ -85,8 +85,9 @@ const authSlice = createSlice({
             state.loading = true
             state.error = null
         })
-        .addCase(signupUser.fulfilled, (state,)=>{
+        .addCase(signupUser.fulfilled, (state,action)=>{
             state.loading = false
+            state.user = action.payload
             state.error = null
             state.status = 'loggedIn'
         })
@@ -99,8 +100,9 @@ const authSlice = createSlice({
             state.loading = true
             state.error = null
         })
-        .addCase(login.fulfilled, (state,)=>{
+        .addCase(login.fulfilled, (state, action)=>{
             state.loading = false
+            state.user = action.payload
             state.error = null
             state.status = 'loggedIn'
         })
