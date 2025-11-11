@@ -12,6 +12,7 @@ export default function Navbar(){
             <Link to='/about'>About Us</Link>
             <Link to='/login'>Login</Link>
             <Link to='/signup'>SignUp</Link>
+            <Link to='/dashboard'>DashBoard</Link>
             </div>
         </nav>
         </>
