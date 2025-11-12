@@ -91,9 +91,9 @@ const authSlice = createSlice({
             state.error = null
             state.status = 'loggedIn'
         })
-        .addCase(signupUser.rejected, (state)=>{
+        .addCase(signupUser.rejected, (state, action)=>{
             state.loading = false
-            state.error = null
+            state.error = action.payload
             state.status = 'loggedOut'
         })
         .addCase(login.pending, (state)=>{
@@ -106,9 +106,10 @@ const authSlice = createSlice({
             state.error = null
             state.status = 'loggedIn'
         })
-        .addCase(login.rejected, (state)=>{
+        .addCase(login.rejected, (state, action)=>{
             state.loading = false
-            state.error = null
+            state.user = null
+            state.error = action.payload
             state.status = 'loggedOut'
         })
         .addCase(logout.pending, (state)=>{
