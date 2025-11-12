@@ -8,10 +8,13 @@ import { DoctorProvider } from './context/DoctorContext'
 import { SearchProvider } from './context/SearchContext'
 import Dashboard from '../Dashboard/pages/Dashboard'
 import Bookings from '../Dashboard/components/Bookings'
+import { AuthProvider } from './context/AuthProvider'
+import PrivateRoute from './PrivateRoute'
 
 function App() {
 
   return (
+    <AuthProvider>
     <DoctorProvider>
       <SearchProvider>
         <BrowserRouter>
@@ -20,12 +23,20 @@ function App() {
             <Route path='/about' element={<About/>} />
             <Route path='/login' element={<Login/>} />
             <Route path='/signup' element={<Signup/>} />
-            <Route path='/dashboard' element={<Dashboard/>} />
-            <Route path='/bookings' element={<Bookings/>} />
+            <Route path='/dashboard' element={
+              <PrivateRoute>
+              <Dashboard/>
+              </PrivateRoute>
+              } />
+            <Route path='/bookings' element={
+              <PrivateRoute>
+                <Bookings/>
+              </PrivateRoute> }/>
           </Routes>
         </BrowserRouter>
       </SearchProvider>
     </DoctorProvider>
+    </AuthProvider>
   )
 }
 
