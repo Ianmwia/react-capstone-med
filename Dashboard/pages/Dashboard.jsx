@@ -6,12 +6,20 @@ import Search from '../components/Search';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../src/context/AuthContext';
 
 export default function Dashboard(){
     const {searchTerm} = useContext(SearchContext)
     const navigate = useNavigate()
+    const {user} = useContext(AuthContext)
 
     const [filterDoctors, setFilterDoctors] = useState(doctors)
+
+    useEffect(()=> {
+        if(user === null){
+            navigate('/login')
+        }
+    }, [user, navigate])
 
     useEffect(()=>{
         const results = doctors.filter(
@@ -22,6 +30,10 @@ export default function Dashboard(){
         )
         setFilterDoctors(results)
     }, [searchTerm])
+
+    if (user === undefined){
+        return <div>Loading user ...</div>
+    }
     return(
         <>
         <Navbar/>
