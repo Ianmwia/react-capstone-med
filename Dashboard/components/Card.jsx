@@ -3,21 +3,35 @@ import { useContext } from 'react';
 import { DoctorContext } from '../../src/context/ContextCreator';
 
 export default function Card({doctor}){
-    const {setSelectedDoctor} = useContext(DoctorContext)
+    const {bookings, setBookings} = useContext(DoctorContext)
     const navigate = useNavigate()
 
     const handleBooking = () => {
-        setSelectedDoctor(doctor)
+        setBookings([...bookings, doctor])
         navigate('/bookings')
     }
     return(
         <>
-        <div>
-            <img src={doctor.image} alt={doctor.name} />
-            <p>{doctor.name}</p>
-            <p>{doctor.specialty}</p>
-            <p>Ksh{doctor.price}</p>
-            <button className='p-2 bg-green-400 text-white' onClick={handleBooking}></button>
+        <div className='max-w-sm p-3 bg-white border border-gray-200 shadow-sm mb-6 rounded-2xl'>
+            <img className='rounded' src={doctor.image} alt={doctor.name} />
+            <p className='font-semibold p-2'>{doctor.name}</p>
+            <hr />
+            <p className='p-2 flex justify-between'>
+                <span className='text-gray-600'>Specialty</span> 
+                <span>{doctor.specialty}</span></p>
+            <hr />
+                <p className='p-2 flex justify-between'>
+                <span className='text-gray-600'>Practice</span>
+                <span>{doctor.practice}</span>
+                </p>
+            <hr />
+            <p className='p-2 flex justify-between'>
+                <span className='text-gray-600'>Price</span>
+                <span>Ksh {doctor.price}</span>
+                </p>
+            <div className='flex justify-center mt-4'>
+            <button className='p-2 w-[80%] bg-green-400 text-white justify-center rounded-2xl transform transition-transform duration-300 hover:scale-105 hover:underline cursor-pointer' onClick={handleBooking}>Book A Session</button>
+            </div>
         </div>
         </>
     )
