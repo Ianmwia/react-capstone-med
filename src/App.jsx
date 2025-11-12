@@ -7,6 +7,7 @@ import Signup from '../pages/SignupPage'
 import { DoctorProvider } from './context/DoctorContext'
 import { SearchProvider } from './context/SearchContext'
 import Dashboard from '../Dashboard/pages/Dashboard'
+import Bookings from '../Dashboard/components/Bookings'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path='/login' element={<Login/>} />
             <Route path='/signup' element={<Signup/>} />
             <Route path='/dashboard' element={<Dashboard/>} />
+            <Route path='/bookings' element={<Bookings/>} />
           </Routes>
         </BrowserRouter>
       </SearchProvider>
