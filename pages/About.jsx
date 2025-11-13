@@ -10,12 +10,11 @@ export default function About(){
         <>
         <Navbar/>
         <main className='m-3 md-flex-row'>
+            <p className='text-center md:text-[36px] font-semibold text-green-500 md:mb-4'>About AfyaCare - Empowering Health Access Across Kenya </p>
         <div>
-            <div className='min-h-screen flex sm:flex-row items-center justify-between'>
-                <div className='flex flex-col md:gap-3 max-w-lg md:basis-2/3'>
+            <div className='flex-row min-h-screen items-center justify-between mb-3 md:grid md:grid-cols-2 md:p-4'>
+                <div className='flex flex-col md:gap-3 max-w-lg'>
                 <div className='leading-loose'>
-                    <p className='sm:text-2xl md:text-[36px] font-semibold text-green-500 md:mb-4 text-center'>About AfyaCare - Empowering Health Access Across Kenya </p>
-                
                     <p> Health is the foundation of a Happy, productive life. Yet for many
                         in Kenya, access to reliable health care and mental wellness support is complicated, stressful or out of reach.
                         AfyaCare exists to remove these Barriers. We believe that every Kenyan deserves timely, compassionate and expert care
@@ -29,13 +28,13 @@ export default function About(){
                     </p>
                 </div>
                 </div>
-                <div className='shrink-0 basis-1/3'>
+                <div className='md:h-80 md:w-80 h-80 justify-self-center'>
                     <img src={aboutImage} alt='a group' className='object-cover h-full rounded-2xl' />
                 </div>
             </div>
-            <div className='min-h-screen'>
+            <div className='min-h-screen md:mb-10'>
                 <p className='text-[36px] font-semibold text-green-500 mb-4 text-center'>Problems We Solve</p>
-                <div className='flex gap-6 justify-evenly flex-wrap mt-4 mb-4'>
+                <div className='flex w-[80%] mx-auto gap-4 justify-evenly flex-wrap mt-4 mb-4'>
                     <AboutCard
                         icon={faUserDoctor}
                         title='Difficulty finding trusted specialists'
@@ -63,19 +62,19 @@ export default function About(){
                 </div>
             </div>
             <p className='text-center text-[36px] font-bold mb-1 text-green-500'>Our Goals</p>
-            <div className='min-h-screen flex justify-evenly flex-wrap gap-6 items-center'>
+            <div className='justify-center md:mt-10 flex md:grid md:grid-cols-2 md:justify-items-center flex-wrap gap-2 items-center'>
                 
-                <div className='bg-[#EEEEEE] p-3 w-96 h-80 rounded-2xl flex flex-col'>
+                <div className='bg-[#EEEEEE] p-3 w-[90%] h-[80%] rounded-2xl flex flex-col'>
                     <p className='text-[25px] font-semibold mb-8'>Our Mission</p>
-                    <div className='grow max-h-[100vh-100px]'>
+                    <div className='leading-7'>
                         <p>To empower every Kenyan to take Charge of their health - mental
                             , emotional and physical - by providing easy access to trusted professionals, guidance and resources
                             We want to create a platform where health is not a chore or a barrier, but a seamless part of life</p>  
                     </div> 
                 </div>
-                <div className='bg-[#EEEEEE] p-3 w-96 h-80 rounded-2xl flex flex-col'>
+                <div className='bg-[#EEEEEE] p-3 w-[90%] h-[80%] rounded-2xl flex flex-col'>
                     <p className='text-[25px] font-semibold mb-8'>Our Vision</p>
-                    <div>
+                    <div className='leading-7'>
                         We envision a Kenya where
                         <ul>
                             <li>Health help is accessible to everyone</li>
