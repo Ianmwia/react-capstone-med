@@ -14,8 +14,8 @@ export default function Search(){
 
     return(
         <>
-        <div className='mb-2 p-2'>
-            <input className='outline p-2 rounded w-full max-w-sm' type="text" placeholder='Search Doctors by name, specialty or practice' value={input} onChange={(e)=> setInput(e.target.value)} onKeyDown={handleKeyDown}/>
+        <div className='p-2'>
+            <input className='outline p-2 rounded w-full sm-w-80 md-96 ls:w-[500px]' type="text" placeholder='Search Doctors by name, specialty or practice' id='search' value={input} onChange={(e)=> setInput(e.target.value)} onKeyDown={handleKeyDown}/>
         </div>
         </>
     )
