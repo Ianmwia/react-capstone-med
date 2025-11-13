@@ -48,13 +48,13 @@ export default function Dashboard(){
             <Search/>
             </div>
             <button 
-            className='sm:text-2xl p-2 bg-green-400 text-white font semibold rounded m-2 cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:underline' 
+            className='p-2 bg-green-400 text-white font semibold rounded m-2 cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:bg-green-600' 
             onClick={()=> navigate('/bookings')}>Bookings</button>
         </div>
         <main className='m-2 flex flex-col'>
         <div>
             <div>
-                <p>Medical Field</p>
+                <p className='text-black font-semibold'>Medical Field</p>
                 <div className='flex mt-2 gap-2 sm:gap-3'>
                     {practices.map((practice)=>(
                         <button key={practice} onClick={()=>setSelectedPractice(practice)} className='bg-green-400 rounded text-white mr-2 p-1 transform transition-transform duration-300 hover:scale-105 hover:bg-green-600 cursor-pointer'>{practice}</button>
@@ -62,7 +62,7 @@ export default function Dashboard(){
                 </div>
             </div>
             <div>
-                <p className='mt-4'>Doctors</p>
+                <p className='mt-4 text-black font-semibold'>Doctors</p>
                 <div className='flex flex-col gap-2 md:grid  md:grid-cols-2'>
                     {filterDoctors.map(doc => (
                         <div className='flex gap-4 items-center outline shadow-lg rounded-4xl p-1 cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:bg-green-400 m-2' 
