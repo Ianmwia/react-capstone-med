@@ -1,16 +1,24 @@
-# React + Vite
+# AfyaCare
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AfyaCare** is a web medical platform designed to simplify how patients access healthcare
 
-Currently, two official plugins are available:
+It bridges the gap between patients and doctors by offering booking service for consultations
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
 
-## React Compiler
+This website is built using React frontend capabilities to handle the ui, logic and user authentication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)
 
-## Expanding the ESLint configuration
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+* **Landing Page**
+ Introductory page about the web services
+
+* **Authentication System**
+ Secure Login and Registration using firebase Authentication and password encryption
+
+* **Dashboard**
+ A platform to book consultation services from the available doctors and a dynamic search filter integrated with a mock Api and a book service feature
