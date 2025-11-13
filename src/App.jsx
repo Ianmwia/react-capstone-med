@@ -10,6 +10,7 @@ import Dashboard from '../Dashboard/pages/Dashboard'
 import Bookings from '../Dashboard/components/Bookings'
 import { AuthProvider } from './context/AuthProvider'
 import PrivateRoute from './PrivateRoute'
+import DoctorPage from '../Dashboard/pages/DoctorPage'
 
 function App() {
 
@@ -26,6 +27,11 @@ function App() {
             <Route path='/dashboard' element={
               <PrivateRoute>
               <Dashboard/>
+              </PrivateRoute>
+              } />
+            <Route path='/doctorpage' element={
+              <PrivateRoute>
+              <DoctorPage/>
               </PrivateRoute>
               } />
             <Route path='/bookings' element={
