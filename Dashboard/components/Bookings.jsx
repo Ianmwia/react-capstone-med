@@ -17,28 +17,18 @@ export default function Bookings(){
     return(
         <>
         <Navbar/>
-        <h2>My Bookings</h2>
+        <h2 className='sm:text-2xl md:text-4xl font-bold text-green-800'>Booked Sessions</h2>
         <div>
             {bookings.map((doctor)=>(
                 <div key={doctor.id}>
-                    <img className='rounded' src={doctor.image} alt={doctor.name} />
-                    <p className='font-semibold p-2'>{doctor.name}</p>
-                    <hr />
-                    <p className='p-2 flex justify-between'>
-                        <span className='text-gray-600'>Specialty</span> 
-                        <span>{doctor.specialty}</span></p>
-                    <hr />
-                    <p className='p-2 flex justify-between'>
-                        <span className='text-gray-600'>Practice</span>
-                        <span>{doctor.practice}</span>
-                    </p>
-                    <hr />
-                    <p className='p-2 flex justify-between'>
-                        <span className='text-gray-600'>Price</span>
-                        <span>Ksh {doctor.price}</span>
-                        </p>
+                    <div className='rounded border p-1 px-2 m-4'>
+                    <p className='font-semibold text-green-400 mb-2'>Congratulations</p>
+                    <p className='leading-7'>You have Booked A session With <span className='font-semibold text-green-400'>{doctor.name}</span> on  {doctor.specialty} appointment
+                    for further details and notice you can reach {doctor.name} on our firm provided
+                    mobile contact <span className='font-semibold'>{doctor.contact}</span></p>
                     <div className='flex justify-center mt-4'>
-                        <button className='p-2 w-[80%] bg-green-400 text-white justify-center rounded-2xl transform transition-transform duration-300 hover:scale-105 hover:underline cursor-pointer' onClick={()=> handleRemove(doctor)}>Remove Session</button>
+                        <button className='p-2 w-[80%] bg-green-400 text-white justify-center rounded-2xl transform transition-transform duration-300 hover:scale-105 hover:bg-green-600 cursor-pointer' onClick={()=> handleRemove(doctor)}>Remove Session</button>
+                    </div>
                     </div>
                 </div>
             ))}
