@@ -1,14 +1,13 @@
-import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { DoctorContext } from '../../src/context/ContextCreator';
 
 export default function Card({doctor}){
     const {bookings, setBookings} = useContext(DoctorContext)
-    const navigate = useNavigate()
 
     const handleBooking = () => {
+        const duplicate = bookings.find((compare)=> compare.id === doctor.id)
+        if(!duplicate)
         setBookings([...bookings, doctor])
-        navigate('/bookings')
     }
     return(
         <>
