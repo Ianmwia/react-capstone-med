@@ -24,7 +24,7 @@ export default function LoginForm(){
     return(
         <>
         <div className='flex items-center justify-center'>
-            <div className='bg-white p-7 rounded-xl w-96 flex flex-col'>
+            <div className='bg-white p-7 rounded-xl md:w-96 flex flex-col'>
                 <h2 className='text-[20px] font-semibold text-center mb-4'>Login</h2>
                 <form onSubmit={handleLogin} className='flex flex-col flex-1 gap-4'>
                     <input className='outline p-2 rounded' type="email" placeholder='email' value={email} autoComplete='email' onChange={(e)=> setEmail(e.target.value)}/>
