@@ -57,7 +57,7 @@ export default function Dashboard(){
                 <p>Medical Field</p>
                 <div className='flex mt-2 gap-2 sm:gap-3'>
                     {practices.map((practice)=>(
-                        <button key={practice} onClick={()=>setSelectedPractice(practice)} className='bg-green-400 rounded text-white mr-2 p-1 hover:underline hover:bg-green-600 cursor-pointer'>{practice}</button>
+                        <button key={practice} onClick={()=>setSelectedPractice(practice)} className='bg-green-400 rounded text-white mr-2 p-1 transform transition-transform duration-300 hover:scale-105 hover:bg-green-600 cursor-pointer'>{practice}</button>
                     ))}
                 </div>
             </div>
@@ -65,7 +65,7 @@ export default function Dashboard(){
                 <p className='mt-4'>Doctors</p>
                 <div className='flex flex-col gap-2 md:grid  md:grid-cols-2'>
                     {filterDoctors.map(doc => (
-                        <div className='flex gap-4 items-center outline shadow-lg rounded-4xl p-1 cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:underline m-2' 
+                        <div className='flex gap-4 items-center outline shadow-lg rounded-4xl p-1 cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:bg-green-400 m-2' 
                         key={doc.id}
                         onClick={()=>{
                             setSelectedDoctor(doc);
