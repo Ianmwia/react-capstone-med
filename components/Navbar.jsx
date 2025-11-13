@@ -24,17 +24,17 @@ export default function Navbar(){
                 </Link>
             </div>
             <div className='md:flex text-white flex items-center space-x-2 md:space-x-2'>
-            <Link className='hover:underline' to='/about'>About Us</Link>
+            <Link className='transform transition-transform duration-300 hover:scale-103 cursor-pointer' to='/about'>About Us</Link>
             {!user && (
                 <>
-                <Link className='hover:underline' to='/login'>Login</Link>
-                <Link className='hover:underline' to='/signup'>SignUp</Link>
+                <Link className='transform transition-transform duration-300 hover:scale-103 cursor-pointer' to='/login'>Login</Link>
+                <Link className='transform transition-transform duration-300 hover:scale-103 cursor-pointer' to='/signup'>SignUp</Link>
                 </>
             )}
             {user && (
                 <>
-                <Link className='hover:underline' to='/dashboard'>DashBoard</Link>
-                <button className='rounded p-1 bg-green-400 text-white hover:underline cursor-pointer' onClick={handleLogout}>logout</button>
+                <Link className='transform transition-transform duration-300 hover:scale-103 cursor-pointer' to='/dashboard'>DashBoard</Link>
+                <button className='rounded p-1 bg-green-400 text-white hover:bg-green-600 hover:scale-101 cursor-pointer' onClick={handleLogout}>logout</button>
                 </>
             )}
             
